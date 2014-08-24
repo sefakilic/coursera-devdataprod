@@ -4,6 +4,7 @@ author: Sefa Kilic
 output: slidy_presentation
 framework: io2012
 highlighter: highlight.js
+mode: selfcontained
 
 ---
 
@@ -45,7 +46,7 @@ unique(crime$description)
 
 ## Shiny App
 
-- Available at http://sefakilic.shinyapps.io/coursera-devdataprod
+- Available at http://sefakilics.rhinyapps.io/coursera-devdataprod
 - View crime locations on Baltimore map
 - Filter by crime type
 

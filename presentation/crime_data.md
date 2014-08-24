@@ -4,6 +4,7 @@ author: Sefa Kilic
 output: slidy_presentation
 framework: io2012
 highlighter: highlight.js
+mode: selfcontained
 
 ---
 
@@ -21,6 +22,13 @@ highlighter: highlight.js
 
 ```r
 library(RCurl)
+```
+
+```
+## Loading required package: bitops
+```
+
+```r
 data_url <- "https://data.baltimorecity.gov/api/views/wsfq-mvij/rows.csv?accessType=DOWNLOAD"
 crime <- read.csv(text=getURL(data_url), na.strings="")
 ```
@@ -37,7 +45,7 @@ head(crime$Location.1)
 ## [1] (39.3095600000, -76.6419400000) (39.3147400000, -76.5652900000)
 ## [3] (39.3262200000, -76.5510000000) (39.3227600000, -76.6070800000)
 ## [5] (39.3529700000, -76.6097700000) (39.3278200000, -76.6093900000)
-## 94542 Levels:  ... (39.3728000000, -76.5522000000)
+## 94541 Levels: (37.5772600000, -81.5291900000) ...
 ```
 
 ---
@@ -64,7 +72,7 @@ unique(crime$description)
 
 ## Shiny App
 
-- Available at http://sefakilic.shinyapps.io/coursera-devdataprod
+- Available at http://sefakilics.rhinyapps.io/coursera-devdataprod
 - View crime locations on Baltimore map
 - Filter by crime type
 
