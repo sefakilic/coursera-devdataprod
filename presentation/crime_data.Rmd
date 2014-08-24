@@ -1,0 +1,52 @@
+---
+title: Mapping Baltimore Police Department Victim Based Crime Data
+author: Sefa Kilic
+output: slidy_presentation
+framework: io2012
+highlighter: highlight.js
+
+---
+
+
+## Baltimore Crime Data
+
+![](baltimore.png)
+
+---
+
+## Data
+
+- Available at [Open Baltimore](https://data.baltimorecity.gov/), [here](https://data.baltimorecity.gov/Public-Safety/BPD-Part-1-Victim-Based-Crime-Data/wsfq-mvij).
+
+```{r cache=TRUE, warning=FALSE}
+library(RCurl)
+data_url <- "https://data.baltimorecity.gov/api/views/wsfq-mvij/rows.csv?accessType=DOWNLOAD"
+crime <- read.csv(text=getURL(data_url), na.strings="")
+```
+
+- `r dim(crime)[1]` incidents
+
+- All data geocoded to the approximate latitude/longitude location of the incident.
+```{r}
+head(crime$Location.1)
+```
+
+---
+
+## Data (cont.)
+
+- `r length(unique(crime$description))` types of crime.
+
+```{r}
+unique(crime$description)
+```
+
+---
+
+## Shiny App
+
+- Available at http://sefakilic.shinyapps.io/coursera-devdataprod
+- View crime locations on Baltimore map
+- Filter by crime type
+
+![](screenshot.png)
